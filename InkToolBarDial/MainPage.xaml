@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="InkToolBarDial.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:InkToolBarDial"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <muxc:Expander
+            Header="Expand to see InkCanvas"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch"
+            Padding="0"
+            d:IsExpanded="true">
+            <Grid>
+                <InkCanvas
+                    x:Name="Canvas" />
+                <InkToolbar
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    TargetInkCanvas="{x:Bind Canvas}"
+                    InitialControls="None">
+                    <InkToolbarBallpointPenButton />
+                </InkToolbar>
+            </Grid>
+        </muxc:Expander>
+    </Grid>
+</Page>
